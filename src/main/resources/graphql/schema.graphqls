@@ -1,0 +1,21 @@
+type Book {
+  id: ID!
+  title: String
+  pages: Int
+  author: Author
+}
+# Type definition
+type Author {
+  name: String
+}
+# Queries to retrive all books, and a book by id
+type Query {
+  allBooks: [Book]
+  bookById(id: ID!): Book
+}
+# Query to update a book by id
+type Mutation {
+  createBook(title: String, pages: Int): Int
+  deleteBook(id: ID!): Boolean
+  updateBook(id: ID!, title: String): Book
+}
